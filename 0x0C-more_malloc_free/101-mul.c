@@ -51,6 +51,25 @@ void *_calloc(unsigned int nmemb, unsigned int size)
 
 
 /**
+ * _length - get the length of strings
+ *
+ * @str: string to get length of
+ *
+ * Return: length of string
+ */
+
+int _length(char *str)
+{
+	int i = 0;
+
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+
+
+/**
  * multiply - initialize array with 0 byte
  *
  * @s1: string 1
@@ -101,3 +120,37 @@ void multiply(char *s1, char *s2)
 	printf("\n");
 	free(temp);
 }
+
+/**
+ * main - Entry point
+ *
+ * Description: a program that multiplies
+ *            two positive numbers
+ *
+ * @argc: number of arguments
+ * @argv: arguments array
+ *
+ * Return: 0 on success 98 on faliure
+ */
+
+int main(int argc, char *argv[])
+{
+	char *n1 = argv[1];
+	char *n2 = argv[2];
+
+	if (argc != 3 || check_number(n1) || check_number(n2))
+		error_exit();
+
+	if (*n1 == '0' || *n2 == '0')
+	{
+		_putchar('0');
+		_putchar('\n');
+	}
+	else
+		multiply(n1, n2);
+	return (0);
+}
+
+
+
+
