@@ -22,7 +22,7 @@ listint_t *find_listint_loop(listint_t *head)
 		{
 			head = prev;
 			prev = p;
-			while(1)
+			while (1)
 			{
 				p = prev;
 				while (p->next != head && p->next != prev)
